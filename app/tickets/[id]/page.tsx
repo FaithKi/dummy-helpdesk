@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 async function getTicket(id: string) {
   const res = await fetch("http://localhost:4000/tickets/" + id, {
     next: {
-      revalidate: 60,
+      revalidate: 0,
       //this means that next will cache the res for xxx seconds
       //set revalidate to 0 to not cache res at all (will need to fetch everytime this function is called)(make things slower)
     },
