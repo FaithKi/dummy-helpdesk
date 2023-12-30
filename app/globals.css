@@ -4,7 +4,7 @@
 
 /* base styles */
 body {
-  background: #ebf0fa;
+  background: #EBF2FA;
   @apply text-gray-500 m-8;
 }
 h1, h2 {
@@ -124,13 +124,13 @@ form button {
     text-xs font-semibold;
 }
 .pill.high {
-  @apply bg-red-300 text-red-600;
+  @apply bg-red-200 text-red-500;
 }
 .pill.medium {
-  @apply bg-blue-300 text-blue-600;
+  @apply bg-blue-200 text-blue-500;
 }
 .pill.low {
-  @apply bg-emerald-300 text-emerald-600;
+  @apply bg-emerald-200 text-emerald-500;
 }
 .card .pill {
   @apply 

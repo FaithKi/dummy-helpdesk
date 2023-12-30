@@ -10,13 +10,6 @@ export default function Loading() {
       <p>Hopefully not for too long :)</p>
       <p>Hopefully not for too long :)</p>
       <p>Hopefully not for too long :)</p>
-      <p>Hopefully not for too long :)</p>
-      <p>Hopefully not for too long :)</p>
-      <p>Hopefully not for too long :)</p>
-      <p>Hopefully not for too long :)</p>
-      <p>Hopefully not for too long :)</p>
-      <p>Hopefully not for too long :)</p>
-      <p>Hopefully not for too long :)</p>
     </main>
   );
 }
