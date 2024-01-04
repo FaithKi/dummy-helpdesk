@@ -3,15 +3,15 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-interface props {
+interface Props {
   id: string;
 }
 
-export default function TicketNav({ id }: props) {
+export default function TicketNav({ id }: Props) {
   const router = useRouter();
 
   const handleDelete = async (id: string) => {
-    const res = await fetch(`http://localhost:4000/tickets/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/tickets/${id}`, {
       method: "DELETE",
       next: {
         revalidate: 0,

@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 
 async function getTicket(id: string) {
   try {
-    const res = await fetch("http://localhost:4000/tickets/" + id, {
+    const res = await fetch("http://localhost:3000/api/tickets/" + id, {
       next: {
         revalidate: 0,
       },
@@ -15,13 +15,12 @@ async function getTicket(id: string) {
 
     return res.json();
   } catch {
-    console.log("error in getTicket");
-    return null;
+    notFound();
   }
 }
 
 export default async function EditTicket({ params }: any) {
-  const ticket = await getTicket(params.id);
+  const { ticket } = await getTicket(params.id);
   return (
     <main>
       <h2 className="test-primary text-center">Edit Ticket</h2>

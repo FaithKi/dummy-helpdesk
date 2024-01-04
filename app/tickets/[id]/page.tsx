@@ -10,9 +10,9 @@ export const dynamicParams = true;
 //this function makes next able to pre-render all the /tickets/{id} pages (makes the performance better)
 //shouldn't use this func when revalidation is set to 0
 export async function generateStaticParams() {
-  const res = await fetch("http://localhost:4000/tickets/");
+  const res = await fetch("http://localhost:3000/api/tickets");
 
-  const tickets = await res.json();
+  const { tickets } = await res.json();
 
   return tickets.map((ticket: any) => ({
     id: ticket.id,
@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 }
 
 async function getTicket(id: string) {
-  const res = await fetch("http://localhost:4000/tickets/" + id, {
+  const res = await fetch("http://localhost:3000/api/tickets/" + id, {
     next: {
       revalidate: 0,
       //this means that next will cache the res for xxx seconds
@@ -35,7 +35,7 @@ async function getTicket(id: string) {
 }
 
 export default async function TicketDetails({ params }: any) {
-  const ticket = await getTicket(params.id);
+  const { ticket } = await getTicket(params.id);
 
   return (
     <main>
@@ -50,7 +50,7 @@ export default async function TicketDetails({ params }: any) {
           {ticket.priority} priority
         </div>
       </div>
-      <TicketNav id={ticket.id} />
+      <TicketNav id={ticket._id} />
     </main>
   );
 }

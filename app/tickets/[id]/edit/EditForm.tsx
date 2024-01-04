@@ -9,7 +9,7 @@ export default function EditForm({ ticket }: any) {
   const [newTitle, setNewTitle] = useState(ticket.title);
   const [newBody, setNewBody] = useState(ticket.body);
   const [newPriority, setNewPriority] = useState(ticket.priority);
-  const id = ticket.id;
+  const id = ticket._id;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ export default function EditForm({ ticket }: any) {
       priority: newPriority,
     };
 
-    const res = await fetch(`http://localhost:4000/tickets/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/tickets/${id}`, {
       method: "PATCH",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newTicket),
