@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { notFound, useRouter } from "next/navigation";
 import React, { FormEvent, useState } from "react";
 
@@ -34,7 +35,7 @@ export default function EditForm({ ticket }: any) {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)}>
+    <form className="w-1/2" onSubmit={(e) => handleSubmit(e)}>
       <label>
         <span>Title:</span>
         <input
@@ -60,8 +61,15 @@ export default function EditForm({ ticket }: any) {
         <option value="medium">Medium Priority</option>
         <option value="high">High Priority</option>
       </select>
-      <button className="btn-primary">Save</button>
-      <button className="btn-secondary">Cancel</button>
+      <div className="flex justify-start gap-5 pt-1">
+        <button className="btn-primary mx-0">Save</button>
+        <Link
+          href={"/tickets/" + id}
+          className="btn-secondary hover:bg-opacity-90 px-3 py-2 rounded-sm text-sm"
+        >
+          Cancel
+        </Link>
+      </div>
     </form>
   );
 }

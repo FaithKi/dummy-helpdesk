@@ -54,7 +54,7 @@ button:hover {
   @apply bg-primary text-white;
 }
 .btn-secondary {
-  @apply bg-gray-200 text-gray-900;
+  @apply bg-gray-300 text-gray-900;
 }
 
 /* form styles */
