@@ -5,6 +5,3 @@ Some **changes** that make this project differs from its based version includes 
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-edit ticket page (additional functionality).  
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-using **Typescript** instead of Javascript.   
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-subtle changes in color theme.  
-
- to-do:  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;-implement cancel edit button.
