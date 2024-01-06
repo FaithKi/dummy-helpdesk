@@ -15,7 +15,7 @@ export default function CreateForm() {
     e.preventDefault();
     setIsLoading(true);
 
-    const ticket = { title, body, priority, user_email: "mario@netninja.dev" };
+    const ticket = { title, body, priority, user_email: "garfield@elgato.dev" };
 
     const res = await fetch("http://localhost:3000/api/tickets", {
       method: "POST",
