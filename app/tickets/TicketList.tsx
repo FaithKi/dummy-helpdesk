@@ -17,6 +17,7 @@ async function getTickets() {
 
 export default async function TicketList() {
   const { tickets } = await getTickets();
+  // const tickets: any[] = [];
 
   return (
     <>
@@ -31,7 +32,7 @@ export default async function TicketList() {
           </Link>
         </div>
       ))}
-      {tickets.lenght === 0 && (
+      {tickets.length === 0 && (
         <p className="text-center">There are no open tickets, yay!</p>
       )}
     </>
